@@ -74,7 +74,7 @@ html{
 		display:none;
 		list-style:none;
 		width:970px;
-	}
+		}
 		
 		/* Col Positions */
 		#nav ul.level01 li.col0 ul.level02{ left: 1px; }
@@ -112,7 +112,9 @@ html{
 /* Multi col lists */
 
 .listContainer1 ul{
-	width:  20% !important;
+	width: 20% !important;
+	/*height: auto !important;*/
+	
 }
 	.listCol1{ left: 0% !important; }
 	.listCol2{ left: 20% !important; }

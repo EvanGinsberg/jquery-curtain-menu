@@ -49,7 +49,7 @@ curtainMenu = {
 
             });
 
-            $("body").addClass("jsEnabled");
+            //$("body").addClass("jsEnabled");
 
             var txtSearch = $('#searchBox .input-text-search');
             txtSearch.focus(function () { if ($(this).val() == 'Search curtainMenu') $(this).val(''); })
@@ -62,7 +62,7 @@ curtainMenu = {
                 ui_click: true
             }
 
-            curtainMenu.breadcrumbs.init();
+            //curtainMenu.breadcrumbs.init();
         });
 
         curtainMenu.navigation.init();
@@ -71,7 +71,7 @@ curtainMenu = {
 
     columns: {
       init: function () {
-        //$("#artists").columns(5);
+        // See for full docs - http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter/
         $('#artists').easyListSplitter({ 
     			colNumber: 5
     		});
@@ -106,6 +106,7 @@ curtainMenu = {
                 revealSpeed = 200;
                 closeSpeed = 500;
                 alterSpeed = 500;
+subMenu1 = $('ul.level02', menuIntentItem);
 
                 nav.bind('mouseleave', function () {
                     curtain.animate({ height: curtain_defaultH }, { duration: closeSpeed, queue: false, complete: function () { $('.state-active', navLevel01).removeClass('state-active'); } });
@@ -138,7 +139,7 @@ curtainMenu = {
 
                     subMenu3 = $('ul.level03', this);
                     subMenu3Size = $('> li', subMenu3).size();
-
+                    
                     if (subMenu3.height() + 60 > minHeight) {
                         subMenu1.height(subMenu3.height() + 80);
                         curtain.animate({ height: subMenu3.height() + 80 }, { easing: easingMethod, duration: alterSpeed, queue: false });
@@ -169,8 +170,17 @@ curtainMenu = {
             }
 
             if (subMenu1.length != 0) {
-                var subMenu1Size = $('> li', subMenu1).size();
+                subMenu1_array = [];
+
+                // Find average subCol height
+                subMenu1.each(function(i) {
+                	subMenu1_array.push($(this).find("li").size());
+                });
+                var subMenu1Size = Math.max.apply( null, subMenu1_array );
+              
+                // Count all list items, multiple by height then add padding.
                 minHeight = (subMenu1Size * 30) + 80;
+                                
                 curtain.animate({ height: minHeight }, { easing: easingMethod, duration: alterSpeed, queue: false });
                 subMenu1.stop(true, true).fadeIn(300);
             } else {
