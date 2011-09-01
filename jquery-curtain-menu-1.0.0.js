@@ -1,107 +1,81 @@
-$(document).ready(function () {
-nav = $('#nav');
-navLevel01 = $('#nav ul.level01');
-navLevel02 = $('#nav ul.level02');
-curtain = $('#nav .curtain');
-curtain_defaultH = curtain.height();
-menuActive = false;
-menuIntent = false;
-menuIntentItem = null;
-revealSpeed = 200;
-closeSpeed = 500;
-alterSpeed = 500;
+// jQuery Curtain-Menu plugin
+// A plugin to create a curtain dropdown menu
+// version 1.0, September 1st, 2011
+// Jordan Lewis
 
+;(function($) {
 
-nav.bind('mouseleave', function () {
-    curtain.animate({ height: curtain_defaultH }, { duration: closeSpeed, queue: false, complete: function () { $('.state-active', navLevel01).removeClass('state-active'); } });
-    menuActive = false;
-    if (typeof intentTimer != 'undefined')
-        clearTimeout(intentTimer);
-});
+    // we need attach the plugin to jQuery's namespace or otherwise it would not be
+    // available outside this function's scope
+    // "el" should be a jQuery object or a collection of jQuery objects as returned by
+    // jQuery's selector engine
+    $.curtainMenu = function(el, options) {
 
+        // plugin's default options
+        // this is private property and is accessible only from inside the plugin
+        var defaults = {
 
+            propertyName: 'value',
 
+            // if your plugin is event-driven, you may provide callback capabilities for its events.
+            // call these functions before or after events of your plugin, so that users may "hook"
+            // custom functions to those particular events without altering the plugin's code
+            onSomeEvent: function() {}
 
-/* Level 1 */
-$('ul.level01 > li', nav).hover(function () {
-    menuIntentItem = $(this);
-    if (!menuActive) {
-        intentTimer = setTimeout(function () {
-            abaf.navigation.showMenu();
-        }, 300);
-    } else {
-        abaf.navigation.showMenu();
+        }
+
+        // to avoid confusions, use "plugin" to reference the current instance of the object
+        var plugin = this;
+
+        // this will hold the merged default, and user-provided options
+        // plugin's properties will be accessible like:
+        // plugin.settings.propertyName from inside the plugin or
+        // myplugin.settings.propertyName from outside the plugin
+        // where "myplugin" is an instance of the plugin
+        plugin.settings = {}
+
+        // the "constructor" method that gets called when the object is created
+        // this is a private method, it can be called only from inside the plugin
+        var init = function() {
+
+            // the plugin's final properties are the merged default and user-provided options (if any)
+            plugin.settings = $.extend({}, defaults, options);
+
+            // make the collection of target elements available throughout the plugin
+            // by making it a public property
+            plugin.el = el;
+
+            // code goes here
+
+        }
+
+        // public methods
+        // these methods can be called like:
+        // plugin.methodName(arg1, arg2, ... argn) from inside the plugin or
+        // myplugin.publicMethod(arg1, arg2, ... argn) from outside the plugin
+        // where "myplugin" is an instance of the plugin
+
+        // a public method. for demonstration purposes only - remove it!
+        plugin.foo_public_method = function() {
+
+            // code goes here
+
+        }
+
+        // private methods
+        // these methods can be called only from inside the plugin like:
+        // methodName(arg1, arg2, ... argn)
+
+        // a private method. for demonstration purposes only - remove it!
+        var foo_private_method = function() {
+
+            // code goes here
+
+        }
+
+        // call the "constructor" method
+        init();
+
     }
-}, function () {
-    if (subMenu1.length != 0) {
-        curtain.animate({ height: minHeight }, { easing: easingMethod, duration: revealSpeed, queue: false });
-    }
-});
 
-
-/* Level 2 */
-$('#nav ul.level02 > li').hover(function () {
-    $('.state-active', navLevel02).removeClass('state-active');
-    $('> a', this).addClass('state-active');
-
-
-    subMenu3 = $('ul.level03', this);
-    subMenu3Size = $('> li', subMenu3).size();
-
-
-    if (subMenu3.height() + 60 > minHeight) {
-        subMenu1.height(subMenu3.height() + 80);
-        curtain.animate({ height: subMenu3.height() + 80 }, { easing: easingMethod, duration: alterSpeed, queue: false });
-    } else {
-        subMenu1.height(minHeight);
-        curtain.animate({ height: minHeight }, { easing: easingMethod, duration: closeSpeed, queue: false });
-    }
-
-
-    subMenu3.stop(true, true).fadeIn(300);
-}, function () {
-    $('> a', this).removeClass('state-active');
-    subMenu3.stop(true, true).fadeOut(300);
-    curtain.animate({ height: minHeight }, { easing: easingMethod, duration: closeSpeed, queue: false });
-});
-
-
-
-});
-
-},
-
-showMenu: function () {
-
-menuActive = true;
-
-subMenu1 = $('ul.level02', menuIntentItem);
-
-
-
-if (!$('> a', menuIntentItem).hasClass('state-active')) {
-$('.state-active', navLevel01).removeClass('state-active');
-$('> a', menuIntentItem).addClass('state-active');
-navLevel02.stop(true, true).fadeOut(300);
-
-} else {
-$('.state-active', navLevel02).removeClass('state-active');
-
-}
-
-
-
-if (subMenu1.length != 0) {
-var subMenu1Size = $('> li', subMenu1).size();
-minHeight = (subMenu1Size * 30) + 80;
-curtain.animate({ height: minHeight }, { easing: easingMethod, duration: alterSpeed, queue: false });
-subMenu1.stop(true, true).fadeIn(300);
-
-} else {
-curtain.animate({ height: curtain_defaultH }, { easing: easingMethod, duration: closeSpeed, queue: false });
-
-}
-
-}
-
-},
+})(jQuery);
