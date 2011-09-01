@@ -65,10 +65,6 @@ curtainMenu = {
             curtainMenu.breadcrumbs.init();
         });
 
-        //curtainMenu.cufon.init();
-
-        
-        curtainMenu.columns.init();
         curtainMenu.navigation.init();
     },
 
