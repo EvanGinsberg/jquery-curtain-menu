@@ -1,5 +1,3 @@
-/// <reference path="/msbuild/jquery-1.3.2-vsdoc2.js" />
-
 /*
 * EASING
 */
@@ -28,54 +26,7 @@ var nav,
 
 curtainMenu = {
     init: function () {
-        $(document).ready(function () {
-
-            listingItems = $('#body ul.listing li:not(.blank), #body ul.blogListing li');
-            listingItems.live('mouseenter mouseleave', function (event) {
-                if (event.type == 'mouseenter') {
-                    $(this).addClass('state-active');
-                    if ($(this).parent().hasClass('landing')) {
-                        $('.rotateOn', this).show();
-                        $('.rotateOff', this).hide();
-                    }
-                } else {
-                    $(this).removeClass('state-active');
-                    if ($(this).parent().hasClass('landing')) {
-                        $('.rotateOn', this).hide();
-                        $('.rotateOff', this).show();
-                    }
-                }
-
-
-            });
-
-            //$("body").addClass("jsEnabled");
-
-            var txtSearch = $('#searchBox .input-text-search');
-            txtSearch.focus(function () { if ($(this).val() == 'Search curtainMenu') $(this).val(''); })
-                     .blur(function () { if ($(this).val() == '') $(this).val('Search curtainMenu'); });
-
-            addthis_config = {
-                ui_offset_top: 189,
-                ui_offset_left: 0,
-                ui_cobrand: "curtainMenu",
-                ui_click: true
-            }
-
-            //curtainMenu.breadcrumbs.init();
-        });
-
         curtainMenu.navigation.init();
-    },
-
-
-    columns: {
-      init: function () {
-        // See for full docs - http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter/
-        $('#artists').easyListSplitter({ 
-    			colNumber: 5
-    		});
-      }
     },
 
     breadcrumbs: {

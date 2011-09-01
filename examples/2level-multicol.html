@@ -11,16 +11,22 @@
   <link rel="stylesheet" href="css/curtain-menu.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
-  <!--<script defer src="../jquery-curtain-menu-1.0.0.js"></script>-->
+  <script defer src="../jquery-curtain-menu-1.0.0.js"></script>
   <script defer src="js/jquery.easyListSplitter.js"></script>
 
   <script type="text/javascript">
 		$(document).ready(function () {
-			//curtainMenu.columns.init();
+		  
+		  // create a new instance of the plugin
+      $('#nav').curtainMenu();
+			
+			$('#artists').easyListSplitter({ 
+  			colNumber: 5
+  		});
 		});
 	</script>
   
-  <script defer src="js/script.js"></script>  
+  <!--<script defer src="js/script.js"></script>-->
   
 </head>
 
@@ -81,81 +87,7 @@
           <li class="col5">
             <a href="/collections/artists">Artists</a>
             
-            <div class="listContainer1">
-            	<ul class="level02 listCol1" id="artists" style="display: none;">
-            		<li><a href="/collections/anna-ross" title="">Anna Ross</a></li>
-            		<li><a href="/collections/belinda-esperson" title="">Belinda Esperson</a></li>
-            		<li><a href="/collections/bridget-bodenham" title="">Bridget Bodenham</a></li>
-            		<li><a href="/collections/carla-fletcher" title="">Carla Fletcher</a></li>
-            		<li><a href="/collections/charles-wyatt" title="">Charles Wyatt</a></li>
-            		<li><a href="/collections/cheryl-moloney" title="">Cheryl Moloney</a></li>
-            		<li><a href="/collections/cory-child" title="">Cory Child</a></li>
-            		<li><a href="/collections/dan-bell" title="">Dan Bell</a></li>
-            		<li><a href="/collections/dani-maugeri" title="">Dani Maugeri</a></li>
-            		<li><a href="/collections/david-parker" title="">David Parker</a></li>
-            		<li><a href="/collections/deirdre-hoban" title="">Deirdre Hoban</a></li>
-            		<li><a href="/collections/deirdre-hoban-and-grant-nemo" title="">Deirdre Hoban &amp; Grant Nemo</a></li>
-            		<li><a href="/collections/djurdjica-kesic" title="">Djurdjica Kesic</a></li>
-            	</ul>
-            	<ul class="listCol2 level02" style="display: none;">
-            		<li><a href="/collections/ellie-mucke" title="">Ellie Mücke</a></li>
-            		<li><a href="/collections/fredericks-and-mae" title="">Fredericks and Mae</a></li>
-            		<li><a href="/collections/goldenink-collaborative" title="">GoldenInk Collaborative</a></li>
-            		<li><a href="/collections/hamish-munro" title="">Hamish Munro</a></li>
-            		<li><a href="/collections/hannah-carlyle" title="">Hannah Carlyle</a></li>
-            		<li><a href="/collections/helena-bogucki" title="">Helena Bogucki</a></li>
-            		<li><a href="/collections/jasmina-krupic" title="">Jasmina Krupic</a></li>
-            		<li><a href="/collections/jeanette-dyke" title="">Jeanette Dyke</a></li>
-            		<li><a href="/collections/jess-and-coconut" title="">Jess and Coconut</a></li>
-            		<li><a href="/collections/jessie-tucker" title="">Jessie Tucker</a></li>
-            		<li><a href="/collections/jill-hermans" title="">Jill Hermans</a></li>
-            		<li><a href="/collections/justin-siow" title="">Justin Siow</a></li>
-            		<li><a href="/collections/karla-way" title="">Karla Way</a></li>
-            	</ul>
-            	<ul class="listCol3 level02" style="display: none;">
-            		<li><a href="/collections/kate-rohde" title="">Kate Rohde</a></li>
-            		<li><a href="/collections/katie-jacobs" title="">Katie Jacobs</a></li>
-            		<li><a href="/collections/kim-victoria-wearne" title="">Kim Victoria Wearne</a></li>
-            		<li><a href="/collections/krista-mcrae" title="">Krista McRae</a></li>
-            		<li><a href="/collections/laura-di-florio" title="">Laura di Florio</a></li>
-            		<li><a href="/collections/leah-jackson" title="">Leah Jackson</a></li>
-            		<li><a href="/collections/liesl-pfeffer" title="">Liesl Pfeffer</a></li>
-            		<li><a href="/collections/lisa-shophouse" title="">Lisa Shophouse</a></li>
-            		<li><a href="/collections/lucy-folk" title="">Lucy Folk</a></li>
-            		<li><a href="/collections/lucy-hearn" title="">Lucy Hearn </a></li>
-            		<li><a href="/collections/maryan-talia-pau" title="">Maryan Talia Pau</a></li>
-            		<li><a href="/collections/masato-takasaka" title="">Masato Takasaka</a></li>
-            		<li><a href="/collections/michaela-c-bruton" title="">Michaela C Bruton</a></li>
-            	</ul>
-            	<ul class="listCol4 level02" style="display: none;">
-            		<li><a href="/collections/nadine-treister" title="">Nadine Treister</a></li>
-            		<li><a href="/collections/naoko-inuzuka" title="">Naoko Inuzuka</a></li>
-            		<li><a href="/collections/natalie-walser" title="">Natalie Walser</a></li>
-            		<li><a href="/collections/nick-bastin" title="">Nick Bastin</a></li>
-            		<li><a href="/collections/ott-by-lia-t" title="">OTT by Lia T</a></li>
-            		<li><a href="/collections/pennie-jagiello" title="">Pennie Jagiello</a></li>
-            		<li><a href="/collections/philip-low" title="">Philip Low</a></li>
-            		<li><a href="/collections/peta-kruger" title="">Peta Kruger</a></li>
-            		<li><a href="/collections/pia-murphy" title="">Pia Murphy</a></li>
-            		<li><a href="/collections/phoebe-porter" title="">Phoebe Porter</a></li>
-            		<li><a href="/collections/romy-mittelman" title="">Romy Mittelman</a></li>
-            		<li><a href="/collections/ruta-kiskyte" title="">Ruta Kiskyte</a></li>
-            		<li><a href="/collections/serpant-and-the-swan" title="">Serpant &amp; the Swan</a></li>
-            	</ul>
-            	<ul class="listCol5 level02 last" style="display: none;">
-            		<li><a href="/collections/sim-luttin" title="">Sim Luttin</a></li>
-            		<li><a href="/collections/stephanie-simek" title="">Stephanie Simek</a></li>
-            		<li><a href="/collections/tae-schmeisser" title="">Tae Schmeisser</a></li>
-            		<li><a href="/collections/tamara-dixon" title="">Tamara Dixon </a></li>
-            		<li><a href="/collections/tenille-evens" title="">Tenille Evens</a></li>
-            		<li><a href="/collections/tessa-blazey" title="">Tessa Blazey </a></li>
-            		<li><a href="/collections/tim-fleming" title="">Tim Fleming</a></li>
-            		<li><a href="/collections/tom-malchi" title="">Tom Malchi</a></li>
-            		<li><a href="/collections/yuko-fujita" title="">Yuko Fujita</a></li>
-            	</ul>
-            </div>
-            
-            <!--<ul id="artists" class="level02">
+            <ul id="artists" class="level02">
               <li><a title="" href="/collections/anna-ross">Anna Ross</a></li>
               <li><a title="" href="/collections/belinda-esperson">Belinda Esperson</a></li>
               <li><a title="" href="/collections/bridget-bodenham">Bridget Bodenham</a></li>
@@ -219,7 +151,7 @@
               <li><a title="" href="/collections/yuko-fujita">Yuko Fujita</a></li>
             </ul>
           </li> 
-        </ul>-->
+        </ul>
     	</div>
     </div>
   </div><!-- #container -->
