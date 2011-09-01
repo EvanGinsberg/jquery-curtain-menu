@@ -16,6 +16,17 @@
         var defaults = {
 
             propertyName: 'value',
+						nav: $('#nav'),
+						navLevel01: $('#nav ul.level01'),
+						navLevel02: $('#nav ul.level02'),
+						curtain: $('#nav .curtain'),
+						curtain_defaultH: curtain.height(),
+						menuActive: false,
+						menuIntent: false,
+						menuIntentItem: null,
+						revealSpeed: 200,
+						closeSpeed: 500,
+						alterSpeed: 500,
 
             // if your plugin is event-driven, you may provide callback capabilities for its events.
             // call these functions before or after events of your plugin, so that users may "hook"

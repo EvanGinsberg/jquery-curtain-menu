@@ -143,3 +143,38 @@
 			.breadcrumbs ul li .currentPage{
 				cursor:default;
 				}
+				
+				
+				
+/* Theme */
+
+body.default #nav ul.level01 li a:hover, 
+body.default #nav ul.level01 li a.state-active{
+	background:#f2ca57 !important;
+	color:#000;
+	}
+	body.default #nav ul.level01 li.active a{
+		background:#f8e09e;
+		color:#000;
+		}
+body.default #nav .curtain, 
+body.default #nav ul.level01 li.active ul li a{
+	background:#f2ca57;
+	}
+	body.default #nav ul.level02 li a:hover, 
+	body.default #nav ul.level02 li.active a,
+	body.default #nav ul.level02 li a.state-active{
+		background:#f8e09e !important;
+		color:#000;
+		}
+		body.default #nav ul.level01 li.active a{
+			background:#f8e09e;
+			color:#000;
+			}
+		body.default #nav ul.level02 li.active ul.level03 li a{
+			background:#f2ca57 !important;
+			}
+			body.default #nav ul.level02 li.active ul.level03 li a:hover, 
+			body.default #nav ul.level02 li.active ul.level03 li.active a{
+				background:#f8e09e !important;
+				}		
