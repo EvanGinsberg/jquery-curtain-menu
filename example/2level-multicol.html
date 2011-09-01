@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>jQuery Curtain Menu - Example</title>
+  <meta name="description" content="">
+  <meta name="author" content="Jordan Lewis">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/curtain-menu.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+  <!--<script defer src="../jquery-curtain-menu-1.0.0.js"></script>-->
+  <script defer src="js/jquery.easyListSplitter.js"></script>
+  <script defer src="js/script.js"></script>
+  
+  
+</head>
+
+<body class="default">
+
+  <div id="container" class="clearfix">
+
+    <div id="nav">
+    	<div class="curtain">
+    		<ul class="level01 col0">
+          <li class="col0">
+            <a href="/collections/jewels">Jewels</a>
+            <ul class="level02">
+              <li><a href="/collections/bracelets">Bracelets</a></li>
+              <li><a href="/collections/brooches">Brooches</a></li>
+              <li><a href="/collections/cufflinks">Cufflinks</a></li>
+              <li><a href="/collections/earrings">Earrings</a></li>
+              <li><a href="/collections/neckpieces">Neckpieces</a></li>
+              <li><a href="/collections/jewels/rings">Rings</a></li>
+            </ul>
+          </li>
+
+          <li class="active col1">
+            <a href="/collections/art">Art</a>
+            <ul class="level02">
+              <li><a title="" href="/collections/prints">Prints</a></li>
+              <li><a title="" href="/collections/sculptures">Sculptures</a></li>
+              <li><a title="" href="/collections/vessels">Vessels</a></li>
+            </ul>
+          </li>
+
+          <li class="col2">
+            <a href="/collections/textiles">Textiles</a>
+            <ul class="level02">
+              <li><a title="" href="/collections/aprons">Aprons</a></li>
+              <li><a title="" href="/collections/cushions">Cushions</a></li>
+              <li><a title="" href="/collections/scarves">Scarves</a></li>
+              <li><a title="" href="/collections/teatowels">Teatowels</a></li>
+            </ul>
+          </li>
+
+          <li class="col3">
+            <a href="/collections/paper">Paper</a>
+            <ul class="level02">
+              <li><a title="" href="/collections/books">Books</a></li>
+              <li><a title="" href="/collections/cards">Cards</a></li>
+            </ul>
+          </li>
+
+          <li class="col4">
+            <a href="/collections/objects">Objects</a>
+            <ul class="level02">
+              <li><a title="" href="/collections/decorative">Decorative</a></li>
+              <li><a title="" href="/collections/tableware">Tableware</a></li>
+            </ul>
+          </li>
+
+          <li class="col5">
+            <a href="/collections/artists">Artists</a>
+            
+            <!--<ul id="artists">
+            	<ul class="level02 col0">
+            		<li><a href="/collections/anna-ross" title="">Anna Ross</a></li>
+            		<li><a href="/collections/belinda-esperson" title="">Belinda Esperson</a></li>
+            		<li><a href="/collections/bridget-bodenham" title="">Bridget Bodenham</a></li>
+            		<li><a href="/collections/carla-fletcher" title="">Carla Fletcher</a></li>
+            		<li><a href="/collections/charles-wyatt" title="">Charles Wyatt</a></li>
+            		<li><a href="/collections/cheryl-moloney" title="">Cheryl Moloney</a></li>
+            		<li><a href="/collections/cory-child" title="">Cory Child</a></li>
+            		<li><a href="/collections/dan-bell" title="">Dan Bell</a></li>
+            		<li><a href="/collections/dani-maugeri" title="">Dani Maugeri</a></li>
+            		<li><a href="/collections/david-parker" title="">David Parker</a></li>
+            		<li><a href="/collections/deirdre-hoban" title="">Deirdre Hoban</a></li>
+            		<li><a href="/collections/deirdre-hoban-and-grant-nemo" title="">Deirdre Hoban &amp; Grant Nemo</a></li>
+            		<li><a href="/collections/djurdjica-kesic" title="">Djurdjica Kesic</a></li>
+            	</ul>
+            	<ul class="level02 col1">
+            		<li><a href="/collections/ellie-mucke" title="">Ellie Mücke</a></li>
+            		<li><a href="/collections/fredericks-and-mae" title="">Fredericks and Mae</a></li>
+            		<li><a href="/collections/goldenink-collaborative" title="">GoldenInk Collaborative</a></li>
+            		<li><a href="/collections/hamish-munro" title="">Hamish Munro</a></li>
+            		<li><a href="/collections/hannah-carlyle" title="">Hannah Carlyle</a></li>
+            		<li><a href="/collections/helena-bogucki" title="">Helena Bogucki</a></li>
+            		<li><a href="/collections/jasmina-krupic" title="">Jasmina Krupic</a></li>
+            		<li><a href="/collections/jeanette-dyke" title="">Jeanette Dyke</a></li>
+            		<li><a href="/collections/jess-and-coconut" title="">Jess and Coconut</a></li>
+            		<li><a href="/collections/jessie-tucker" title="">Jessie Tucker</a></li>
+            		<li><a href="/collections/jill-hermans" title="">Jill Hermans</a></li>
+            		<li><a href="/collections/justin-siow" title="">Justin Siow</a></li>
+            		<li><a href="/collections/karla-way" title="">Karla Way</a></li>
+            	</ul>
+            	<ul class="level02 col2">
+            		<li><a href="/collections/kate-rohde" title="">Kate Rohde</a></li>
+            		<li><a href="/collections/katie-jacobs" title="">Katie Jacobs</a></li>
+            		<li><a href="/collections/kim-victoria-wearne" title="">Kim Victoria Wearne</a></li>
+            		<li><a href="/collections/krista-mcrae" title="">Krista McRae</a></li>
+            		<li><a href="/collections/laura-di-florio" title="">Laura di Florio</a></li>
+            		<li><a href="/collections/leah-jackson" title="">Leah Jackson</a></li>
+            		<li><a href="/collections/liesl-pfeffer" title="">Liesl Pfeffer</a></li>
+            		<li><a href="/collections/lisa-shophouse" title="">Lisa Shophouse</a></li>
+            		<li><a href="/collections/lucy-folk" title="">Lucy Folk</a></li>
+            		<li><a href="/collections/lucy-hearn" title="">Lucy Hearn </a></li>
+            		<li><a href="/collections/maryan-talia-pau" title="">Maryan Talia Pau</a></li>
+            		<li><a href="/collections/masato-takasaka" title="">Masato Takasaka</a></li>
+            		<li><a href="/collections/michaela-c-bruton" title="">Michaela C Bruton</a></li>
+            	</ul>
+            	<ul class="level02 col3">
+            		<li><a href="/collections/nadine-treister" title="">Nadine Treister</a></li>
+            		<li><a href="/collections/naoko-inuzuka" title="">Naoko Inuzuka</a></li>
+            		<li><a href="/collections/natalie-walser" title="">Natalie Walser</a></li>
+            		<li><a href="/collections/nick-bastin" title="">Nick Bastin</a></li>
+            		<li><a href="/collections/ott-by-lia-t" title="">OTT by Lia T</a></li>
+            		<li><a href="/collections/pennie-jagiello" title="">Pennie Jagiello</a></li>
+            		<li><a href="/collections/philip-low" title="">Philip Low</a></li>
+            		<li><a href="/collections/peta-kruger" title="">Peta Kruger</a></li>
+            		<li><a href="/collections/pia-murphy" title="">Pia Murphy</a></li>
+            		<li><a href="/collections/phoebe-porter" title="">Phoebe Porter</a></li>
+            		<li><a href="/collections/romy-mittelman" title="">Romy Mittelman</a></li>
+            		<li><a href="/collections/ruta-kiskyte" title="">Ruta Kiskyte</a></li>
+            		<li><a href="/collections/serpant-and-the-swan" title="">Serpant &amp; the Swan</a></li>
+            	</ul>
+            	<ul class="level02 col4">
+            		<li><a href="/collections/sim-luttin" title="">Sim Luttin</a></li>
+            		<li><a href="/collections/stephanie-simek" title="">Stephanie Simek</a></li>
+            		<li><a href="/collections/tae-schmeisser" title="">Tae Schmeisser</a></li>
+            		<li><a href="/collections/tamara-dixon" title="">Tamara Dixon </a></li>
+            		<li><a href="/collections/tenille-evens" title="">Tenille Evens</a></li>
+            		<li><a href="/collections/tessa-blazey" title="">Tessa Blazey </a></li>
+            		<li><a href="/collections/tim-fleming" title="">Tim Fleming</a></li>
+            		<li><a href="/collections/tom-malchi" title="">Tom Malchi</a></li>
+            		<li><a href="/collections/yuko-fujita" title="">Yuko Fujita</a></li>
+            	</ul>
+            </ul>-->
+            
+            <ul id="artists" class="level02">
+              <li><a title="" href="/collections/anna-ross">Anna Ross</a></li>
+              <li><a title="" href="/collections/belinda-esperson">Belinda Esperson</a></li>
+              <li><a title="" href="/collections/bridget-bodenham">Bridget Bodenham</a></li>
+              <li><a title="" href="/collections/carla-fletcher">Carla Fletcher</a></li>
+              <li><a title="" href="/collections/charles-wyatt">Charles Wyatt</a></li>
+              <li><a title="" href="/collections/cheryl-moloney">Cheryl Moloney</a></li>
+              <li><a title="" href="/collections/cory-child">Cory Child</a></li>
+              <li><a title="" href="/collections/dan-bell">Dan Bell</a></li>
+              <li><a title="" href="/collections/dani-maugeri">Dani Maugeri</a></li>
+              <li><a title="" href="/collections/david-parker">David Parker</a></li>
+              <li><a title="" href="/collections/deirdre-hoban">Deirdre Hoban</a></li>
+              <li><a title="" href="/collections/deirdre-hoban-and-grant-nemo">Deirdre Hoban &amp; Grant Nemo</a></li>
+              <li><a title="" href="/collections/djurdjica-kesic">Djurdjica Kesic</a></li>
+              <li><a title="" href="/collections/ellie-mucke">Ellie Mücke</a></li>
+              <li><a title="" href="/collections/fredericks-and-mae">Fredericks and Mae</a></li>
+              <li><a title="" href="/collections/goldenink-collaborative">GoldenInk Collaborative</a></li>
+              <li><a title="" href="/collections/hamish-munro">Hamish Munro</a></li>
+              <li><a title="" href="/collections/hannah-carlyle">Hannah Carlyle</a></li>
+              <li><a title="" href="/collections/helena-bogucki">Helena Bogucki</a></li>
+              <li><a title="" href="/collections/jasmina-krupic">Jasmina Krupic</a></li>
+              <li><a title="" href="/collections/jeanette-dyke">Jeanette Dyke</a></li>
+              <li><a title="" href="/collections/jess-and-coconut">Jess and Coconut</a></li>
+              <li><a title="" href="/collections/jessie-tucker">Jessie Tucker</a></li>
+              <li><a title="" href="/collections/jill-hermans">Jill Hermans</a></li>
+              <li><a title="" href="/collections/justin-siow">Justin Siow</a></li>
+              <li><a title="" href="/collections/karla-way">Karla Way</a></li>
+              <li><a title="" href="/collections/kate-rohde">Kate Rohde</a></li>
+              <li><a title="" href="/collections/katie-jacobs">Katie Jacobs</a></li>
+              <li><a title="" href="/collections/kim-victoria-wearne">Kim Victoria Wearne</a></li>
+              <li><a title="" href="/collections/krista-mcrae">Krista McRae</a></li>
+              <li><a title="" href="/collections/laura-di-florio">Laura di Florio</a></li>
+              <li><a title="" href="/collections/leah-jackson">Leah Jackson</a></li>
+              <li><a title="" href="/collections/liesl-pfeffer">Liesl Pfeffer</a></li>
+              <li><a title="" href="/collections/lisa-shophouse">Lisa Shophouse</a></li>
+              <li><a title="" href="/collections/lucy-folk">Lucy Folk</a></li>
+              <li><a title="" href="/collections/lucy-hearn">Lucy Hearn </a></li>
+              <li><a title="" href="/collections/maryan-talia-pau">Maryan Talia Pau</a></li>
+              <li><a title="" href="/collections/masato-takasaka">Masato Takasaka</a></li>
+              <li><a title="" href="/collections/michaela-c-bruton">Michaela C Bruton</a></li>
+              <li><a title="" href="/collections/nadine-treister">Nadine Treister</a></li>
+              <li><a title="" href="/collections/naoko-inuzuka">Naoko Inuzuka</a></li>
+              <li><a title="" href="/collections/natalie-walser">Natalie Walser</a></li>
+              <li><a title="" href="/collections/nick-bastin">Nick Bastin</a></li>
+              <li><a title="" href="/collections/ott-by-lia-t">OTT by Lia T</a></li>
+              <li><a title="" href="/collections/pennie-jagiello">Pennie Jagiello</a></li>
+              <li><a title="" href="/collections/philip-low">Philip Low</a></li>
+              <li><a title="" href="/collections/peta-kruger">Peta Kruger</a></li>
+              <li><a title="" href="/collections/pia-murphy">Pia Murphy</a></li>
+              <li><a title="" href="/collections/phoebe-porter">Phoebe Porter</a></li>
+              <li><a title="" href="/collections/romy-mittelman">Romy Mittelman</a></li>
+              <li><a title="" href="/collections/ruta-kiskyte">Ruta Kiskyte</a></li>
+              <li><a title="" href="/collections/serpant-and-the-swan">Serpant &amp; the Swan</a></li>
+              <li><a title="" href="/collections/sim-luttin">Sim Luttin</a></li>
+              <li><a title="" href="/collections/stephanie-simek">Stephanie Simek</a></li>
+              <li><a title="" href="/collections/tae-schmeisser">Tae Schmeisser</a></li>
+              <li><a title="" href="/collections/tamara-dixon">Tamara Dixon </a></li>
+              <li><a title="" href="/collections/tenille-evens">Tenille Evens</a></li>
+              <li><a title="" href="/collections/tessa-blazey">Tessa Blazey </a></li>
+              <li><a title="" href="/collections/tim-fleming">Tim Fleming</a></li>
+              <li><a title="" href="/collections/tom-malchi">Tom Malchi</a></li>
+              <li><a title="" href="/collections/yuko-fujita">Yuko Fujita</a></li>
+            </ul>
+          </li> 
+        </ul>
+    	</div>
+    </div>
+  </div><!-- #container -->
+  
+</body>
+</html>

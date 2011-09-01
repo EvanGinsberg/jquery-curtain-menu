@@ -26,7 +26,7 @@ var nav,
     alterSpeed,
     addthis_config;
 
-abaf = {
+curtainMenu = {
     init: function () {
         $(document).ready(function () {
 
@@ -52,23 +52,35 @@ abaf = {
             $("body").addClass("jsEnabled");
 
             var txtSearch = $('#searchBox .input-text-search');
-            txtSearch.focus(function () { if ($(this).val() == 'Search AbaF') $(this).val(''); })
-                     .blur(function () { if ($(this).val() == '') $(this).val('Search AbaF'); });
+            txtSearch.focus(function () { if ($(this).val() == 'Search curtainMenu') $(this).val(''); })
+                     .blur(function () { if ($(this).val() == '') $(this).val('Search curtainMenu'); });
 
             addthis_config = {
                 ui_offset_top: 189,
                 ui_offset_left: 0,
-                ui_cobrand: "AbaF",
+                ui_cobrand: "curtainMenu",
                 ui_click: true
             }
 
-            abaf.breadcrumbs.init();
+            curtainMenu.breadcrumbs.init();
         });
 
-        //abaf.cufon.init();
-        abaf.navigation.init();
+        //curtainMenu.cufon.init();
+
+        
+        curtainMenu.columns.init();
+        curtainMenu.navigation.init();
     },
 
+
+    columns: {
+      init: function () {
+        //$("#artists").columns(5);
+        $('#artists').easyListSplitter({ 
+    			colNumber: 5
+    		});
+      }
+    },
 
     breadcrumbs: {
         init: function () {
@@ -83,49 +95,7 @@ abaf = {
             }
         }
     },
-    promotionScroller: { init: function () {
-        $(document).ready(function () {
-            var currentPosition = 0;
-            var slideWidth = 969;
-            var slides = $('#promo > .slide');
-            var numberOfSlides = slides.length;
-            var animateSpeed = 900;
 
-            // Remove scrollbar with JS
-            $('#promo').css('overflow', 'hidden');
-            slides.width(slideWidth);
-            slides.wrapAll('<div id="slideInner"></div>').css({ 'float': 'left', 'width': slideWidth });
-            $('#slideInner').css('width', slideWidth * numberOfSlides);
-            $('#promo').after('<ul id="controlsList"></ul>');
-            slides.each(function (i) { $('#controlsList').append('<li><a href="#" id="' + i + '" class="slideTH">' + (i + 1) + '</a></li>'); })
-            $('#controlsList li:first a').addClass('active');
-
-            //Auto Scroll
-            function sessTimer() {
-                slideTimer = window.setInterval(function () {
-                    // Determin new position
-                    currentPosition = $('#controlsList li a.active').attr('id');
-                    if (parseInt(currentPosition) + 2 > numberOfSlides) { currentPosition = 0 } else { currentPosition = parseInt(currentPosition) + 1 };
-                    $('#slideInner').animate({ 'marginLeft': -(slideWidth * currentPosition) }, { easing: easingMethod, duration: animateSpeed });
-                    $('#controlsList li a.active').removeClass('active');
-                    $('#' + currentPosition).addClass('active');
-                }, 10000);
-            }
-
-            sessTimer();
-
-            $('.slideTH').bind('click', function () {
-                $('#controlsList li a').removeClass('active');
-                $(this).addClass('active');
-                currentPosition = $(this).attr('id');
-                $('#slideInner').animate({ 'marginLeft': slideWidth * (-currentPosition) }, { easing: easingMethod, duration: animateSpeed });
-                clearInterval(slideTimer);
-                sessTimer();
-                return false;
-            });
-        });
-    }
-    },
     navigation: {
         init: function () {
             $(document).ready(function () {
@@ -154,10 +124,10 @@ abaf = {
                     menuIntentItem = $(this);
                     if (!menuActive) {
                         intentTimer = setTimeout(function () {
-                            abaf.navigation.showMenu();
+                            curtainMenu.navigation.showMenu();
                         }, 300);
                     } else {
-                        abaf.navigation.showMenu();
+                        curtainMenu.navigation.showMenu();
                     }
                 }, function () {
                     if (subMenu1.length != 0) {
@@ -214,5 +184,5 @@ abaf = {
     }
 };
 
-abaf.init();
+curtainMenu.init();
 
