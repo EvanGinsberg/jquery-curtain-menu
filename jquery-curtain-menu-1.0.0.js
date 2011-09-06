@@ -1,50 +1,62 @@
-/*
-* A jQuery plugin template
-* Basically used as personal reference
-*
-* Author: Andy Goh (hantu)
-* Website: http://www.andygoh.net
-*
-* Revisions:
-* 0.1 - Initial commit
-*
-* References:
-* http://www.learningjquery.com/2007/10/a-plugin-development-pattern
-* http://docs.jquery.com/Plugins/Authoring
-*
-* Notes:
-* - Good idea to name your file jquery.pluginName.js
-*/
+//
+// create closure
+//
 (function($) {
-
-// replace 'pluginName' with the name of your plugin
-    $.fn.curtainMenu = function(options) {
-			// plugin default options
-        var defaults = {
-					nav: "#nav",
-					subnav: "#subnav"
-        };
-
-// extends defaults with options provided
-        if (options) {
-					$.extend(defaults, options);
-				}
-					
-// iterate over matched elements
-        return this.each(function() {
-            // implementations
-							console.log("init");
-        });
-
-    };
-
-// public functions definition
-$.fn.curtainMenu.functionName = function(foo) {
-return this;
+  //
+  // plugin definition
+  //
+  $.fn.curtainMenu = function(options) {
+    debug(this);
+   // build main options before element iteration
+   var opts = $.extend({}, $.fn.hilight.defaults, options);
+ // iterate and reformat each matched element
+ return this.each(function() {
+   $this = $(this);
+   // build element specific options
+   var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
+   // update element styles
+   $this.css({
+  backgroundColor: o.background,
+  color: o.foreground
+   });
+   var markup = $this.html();
+   // call our format function
+   markup = $.fn.hilight.format(markup);
+   $this.html(markup);
+ });
+  };
+  //
+  // private function for debugging
+  //
+  function debug($obj) {
+    if (window.console && window.console.log)
+      window.console.log('debug');
+  };
+  //
+  // define and expose our format function
+  //
+  $.fn.curtainMenu.format = function(txt) {
+    return '<strong>' + txt + '</strong>';
+  };
+  //
+  // plugin defaults
+  //
+  $.fn.hilight.defaults = {
+  nav: $('#nav'),
+  navLevel01: $('#nav ul.level01'),
+  navLevel02: $('#nav ul.level02'),
+  curtain: $('#nav .curtain'),
+  //curtain_defaultH: curtain.height(),
+  menuActive: false,
+  menuIntent: false,
+  menuIntentItem: null,
+  revealSpeed: 200,
+  closeSpeed: 500,
+  alterSpeed: 500
+  //subMenu1: $('ul.level02', menuIntentItem)
 };
-
-// private functions definition
-function foobar() {}
-
+//
+// end of closure
+//
 })(jQuery);
 
