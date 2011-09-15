@@ -11,22 +11,26 @@
   <link rel="stylesheet" href="css/curtain-menu.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
-  <script defer src="../jquery-curtain-menu-1.0.0.js"></script>
-  <script defer src="js/jquery.easyListSplitter.js"></script>
+	<script defer src="js/plugins.js"></script>
+	<script defer src="../jquery-curtain-menu-1.0.0.js"></script>
+  <!-- <script defer src="js/jquery.easyListSplitter.js"></script>-->
 
   <script type="text/javascript">
 		$(document).ready(function () {
-		  
+
 		  // create a new instance of the plugin
-      $('#nav').curtainMenu();
+      $('#nav').curtainMenu({
+				//closeSpeed: 999
+			});
+
 			
-			$('#artists').easyListSplitter({ 
+			/*$('#artists').easyListSplitter({ 
   			colNumber: 5
-  		});
+  		});*/
 		});
 	</script>
   
-  <!--<script defer src="js/script.js"></script>-->
+  <!--script defer src="js/script.js"></script>-->
   
 </head>
 
